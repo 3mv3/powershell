@@ -1,0 +1,2 @@
+# this script can be copied into visual studio and ran as an extral tool to turn local loggin on / off
+[xml]$xmlDoc = (gc logging.log4net); $xmlDoc.log4net.root.level.value = If ($xmlDoc.log4net.root.level.value -eq 'INFO') {Write-Host 'Logs off';'OFF'} Else {Write-Host 'Logs on';'INFO'}; $xmlDoc.Save('C:\Dev\repo\logging.log4net');
